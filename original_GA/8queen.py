@@ -129,11 +129,11 @@ def main(iterations=1000, top_n=10):
 if __name__ == "__main__":
     best_grids, best_unit_counts_list = main()
 
-# 上位10位の配置を表示
-for i in range(len(best_grids)):
-    print(f"Top {i+1} Grid:")
-    results(best_unit_counts_list[i])
-    plot_grid(best_grids[i], units, best_unit_counts_list[i])
+    # 上位10位の配置を表示
+    for i in range(len(best_grids)):
+        print(f"Top {i+1} Grid:")
+        results(best_unit_counts_list[i])
+        plot_grid(best_grids[i], units, best_unit_counts_list[i])
 
 
 
