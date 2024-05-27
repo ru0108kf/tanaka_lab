@@ -1,17 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[9]:
-
-
 # モジュールのインポート
 import numpy as np
 import matplotlib.pyplot as plt
 import copy
-
-
-# In[10]:
-
 
 # グリッドのサイズ
 GRID_SIZE = 10
@@ -23,9 +13,6 @@ units = {
     'C': [(1, 1), (-1, -1)],
     'D': [(-1, 1), (1, -1)]
 }
-
-
-# In[11]:
 
 
 # ベクトル方向のセルを1に置き換え
@@ -117,10 +104,6 @@ def place_unit(grid):
             grid = replace_one(grid, coordinate, units[unit_type])# 開口部の直線状を1に変える
     return grid, unit_counts
 
-
-# In[12]:
-
-
 # 1000回回して上位を保存
 def main(iterations=1000, top_n=10):
     best_grids = []
@@ -142,9 +125,6 @@ def main(iterations=1000, top_n=10):
     return best_grids, best_unit_counts_list
 
 
-# In[17]:
-
-
 # 最適化を実行し、上位10位の配置を取得
 if __name__ == "__main__":
     best_grids, best_unit_counts_list = main()
@@ -154,9 +134,6 @@ for i in range(len(best_grids)):
     print(f"Top {i+1} Grid:")
     results(best_unit_counts_list[i])
     plot_grid(best_grids[i], units, best_unit_counts_list[i])
-
-
-# In[ ]:
 
 
 
