@@ -179,6 +179,7 @@ class Trainer:
                             + f'{ptime} sec --- ' + '\n' \
                             + f'rewards/episode {eval_rwds: .2f}, ' \
                             + f'steps/episode {eval_steps: .2f}'
+                        print(msg)
 
                     # 評価eval_rwdsが指定値eary_stopよりも上だったら終了
                     if eary_stop is not None:
