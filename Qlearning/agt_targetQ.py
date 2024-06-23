@@ -102,11 +102,11 @@ class TargetQAgt(ReplayQAgt):
         if type == 'main':
             # Qネットワークに観測obsを入力し出力を得る (A)
             Q = self.model.predict(obs.reshape(
-                (1,) + self.input_size))[0, :]
+                (1,) + self.input_size), verbose=0)[0, :]
         elif type == 'target':
             # ターゲットネットに観測obsを入力し出力を得る (B)
             Q = self.model_target.predict(obs.reshape(
-                (1,) + self.input_size))[0, :]
+                (1,) + self.input_size), verbose=0)[0, :]
         else:
             raise ValueError('get_Q のtype が不適切です')
 

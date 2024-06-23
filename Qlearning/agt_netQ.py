@@ -72,7 +72,7 @@ class NetQAgt():
         # ------------------------- 編集ここから
         # 観測obsを入力し出力を得る (A)
         Q = self.model.predict(
-            obs.reshape((1,) + self.input_size))[0, :]
+            obs.reshape((1,) + self.input_size), verbose=0)[0, :]
         # ------------------------- ここまで
         return Q
 
